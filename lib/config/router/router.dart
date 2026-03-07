@@ -1,4 +1,5 @@
 import 'package:enrutamiento/config/router/router_model.dart';
+import 'package:enrutamiento/presentation/screen/product/product_screen.dart';
 import 'package:enrutamiento/presentation/screen/screen.dart';
 import 'package:enrutamiento/presentation/screen/shared/layout.dart';
 import 'package:go_router/go_router.dart';
@@ -33,6 +34,12 @@ List<RouterModel> appRoutes = [
     description: "Pantalla de abajo",
     path: "/abajo",
     widget: (context, state) => const AbajoScreen(),
+  ),
+  RouterModel(
+    name: "Product",
+    description: "Pantalla de productos",
+    path: "/product",
+    widget: (context, state) => const ProductScreen(),
   ),
 ];
 

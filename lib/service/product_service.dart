@@ -10,9 +10,9 @@ class ProductService{
     final response = await _dio.get(productConst);
     if(response.statusCode == 200){
       final data = response.data;
-      return data.map((e) => ProductModel.fromJson(e));
+      return data.map((e) => ProductModel.fromJson(e)).toList();
     }
-    return []
+    return [];
 
   }
 }

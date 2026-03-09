@@ -9,8 +9,8 @@ class ProductService{
   Future<List<ProductModel>> getProduct() async{
     final response = await _dio.get(productConst);
     if(response.statusCode == 200){
-      final data = response.data;
-      return data.map((e) => ProductModel.fromJson(e)).toList();
+      final data = response.data as List;
+      return data.map((e) => ProductModel.fromJson(e as Map<String, dynamic>)).toList();
     }
     return [];
 

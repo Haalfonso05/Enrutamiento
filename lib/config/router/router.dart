@@ -49,7 +49,7 @@ final GoRouter router = GoRouter(
     ShellRoute(
       builder: (context, state, child) {
         print(state.topRoute?.name);
-        return Layout(child: child, title: state.topRoute?.name ?? "");
+        return Layout(title: state.topRoute?.name ?? "", child: child);
       },
       routes: [
         ...appRoutes.map((route) {

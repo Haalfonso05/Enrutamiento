@@ -1,6 +1,7 @@
 import 'package:enrutamiento/config/router/router_model.dart';
 import 'package:enrutamiento/presentation/screen/product/product_screen.dart';
 import 'package:enrutamiento/presentation/screen/product2/product2_screen.dart';
+import 'package:enrutamiento/presentation/screen/product2/product2_detail_screen.dart';
 import 'package:enrutamiento/presentation/screen/screen.dart';
 import 'package:enrutamiento/presentation/screen/shared/layout.dart';
 import 'package:go_router/go_router.dart';
@@ -67,6 +68,14 @@ final GoRouter router = GoRouter(
           );
         }), // appRoutes
       ],
+    ),
+    GoRoute(
+      path: "/product/:id",
+      name: "/product2_detail_screen",
+      builder: (context, state) {
+        int id = int.parse(state.pathParameters["id"]!);
+        return Product2DetailScreen(id: id);
+      },
     ), // ShellRoute
   ],
   errorBuilder: (context, state) => HomeScreen(), // <RouteBase>[]

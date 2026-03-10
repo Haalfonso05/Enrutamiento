@@ -13,4 +13,12 @@ class DragonballService {
     }
     return [];
   }
+
+  Future<DragonballModel?> getCharacterById(int id) async {
+    final response = await _dio.get('$url/$id');
+    if (response.statusCode == 200) {
+      return DragonballModel.fromJson(response.data as Map<String, dynamic>);
+    }
+    return null;
+  }
 }

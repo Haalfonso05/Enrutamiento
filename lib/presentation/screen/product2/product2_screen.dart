@@ -1,6 +1,7 @@
 import 'package:enrutamiento/model/dragonball_model.dart';
 import 'package:enrutamiento/service/dragonball_service.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class Product2Screen extends StatefulWidget {
   const Product2Screen({super.key});
@@ -82,6 +83,9 @@ class _Product2ScreenState extends State<Product2Screen> {
                 Text('Ki: ${character.ki}'),
               ],
             ),
+            onTap: () {
+              context.go('/product/${character.id}');
+            },
           ),
         );
       },
